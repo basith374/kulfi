@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <meta property="og:title" content="{{ site.title }}" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="{{ site.description }}" />
+    <meta property="og:description" content="{{ site.description }}" />
+    <link rel="canonical" href="{{ site.url }}" />
+    <meta property="og:url" content="{{ site.url }}" />
+    <meta property="og:site_name" content="Kulfi Ice Creams" />
+    <script type="application/ld+json">
+    {
+        "headline": "{{ site.title }}",
+        "@type":"WebSite",
+        "url":"{{ site.url }}",
+        "name":"{{ site.title }}",
+        "description":"{{ site.description }}",
+        "@context":"https://schema.org"
+    }
+    </script>
+    <link rel="stylesheet" href="/assets/main.css">
+</head>
+
+<body>
+    <header role="banner">
+        <div class="h-c">
+            <img src="/assets/kulfi_b.png" alt="Kulfi Thalassery" />
+            <div>The taste of happiness</div>
+        </div>
+    </header>
+    <main aria-label="Content">
+        <div class="m-c">
+            <div class="desc">{{ site.description }}</div>
+            <h1>Our locations</h1>
+            <div class="card-c">
+                {% for location in page.locations %}
+                <div class="c-c" itemscope itemtype="http://schema.org/LocalBusiness">
+                    <div class="map-c">
+                        <iframe src="{{ location.url }}" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                    <link itemprop="sameAs" href="{{ location.gmap }}" />
+                    <div class="map-t" itemprop="name">
+                        <h3>{{ location.name }}</h3>
+                        <div class="ex"><img src="/assets/phone.svg" alt="telephone" /> <span itemprop="telephone">{{ location.phone }}</span></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="s-links">
+            <ul class="s-m">
+                <li><a href="https://www.facebook.com/kulfiicecreamz"><img src="/assets/facebook.svg" alt="kulfi on facebook" /></a></li>
+                <li><a href="https://www.instagram.com/kulfi__"><img src="/assets/instagram.svg" alt="kulfi on instagram" /></a></li>
+            </ul>
+        </div>
+        <div class="f-f">Kulfi &copy; 2020</div>
+
+    </footer>
+</body>
+
+</html>
