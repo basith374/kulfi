@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   The best cakes & ice creams in Kannur. Come and taste the best pastries.
   The most craved delicacies is here at Kulfi. Home of the ice creams.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://kulficecream.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: minima
